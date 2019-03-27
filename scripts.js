@@ -49,6 +49,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let rainbow = ['DeepPink', 'FireBrick', 'GreenYellow', 'Lavender', 'Wheat', 'SpringGreen', 'Sienna', 'PowderBlue'];
 
+    function getRandomColor() {
+        let randomColor = rainbow[Math.floor(Math.random() * rainbow.length)];
+        return randomColor;
+    }
+
+    h1New.addEventListener('dblclick', function () {
+        let randoRainbow = getRandomColor();
+        h1New.style.color = randoRainbow;
+    })
+
+    h2New.addEventListener('dblclick', function () {
+        let randoRainbow = getRandomColor();
+        h2New.style.color = randoRainbow;
+    })
+
+    h3New.addEventListener('dblclick', function () {
+        let randoRainbow = getRandomColor();
+        h3New.style.color = randoRainbow;
+    })
+
+    h4New.addEventListener('dblclick', function () {
+        let randoRainbow = getRandomColor();
+        h4New.style.color = randoRainbow;
+    })
+
+    h5New.addEventListener('dblclick', function () {
+        let randoRainbow = getRandomColor();
+        h5New.style.color = randoRainbow;
+    })
+
+    h6New.addEventListener('dblclick', function () {
+        let randoRainbow = getRandomColor();
+        h6New.style.color = randoRainbow;
+    })
+
+    let x = 1;
+    function insertListItem() {
+        let ulList = document.createElement('ul');
+        let listItem = document.createElement('li');
+        let text = document.createTextNode('This is list item ' + [x++]);
+        listItem.appendChild(text);
+        ulList.appendChild(listItem);
+        document.body.appendChild(ulList);
+
+        listItem.addEventListener('click', function () {
+            let randomColor = getRandomColor();
+            ulList.style.color = randomColor;
+        })
+
+        listItem.addEventListener('dblclick', function () {
+            this.remove();
+        });
+    }
+    document.getElementsByClassName('btn')[0].addEventListener('click', function () {
+        insertListItem();
+    })
 
 });
 
